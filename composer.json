@@ -1,0 +1,19 @@
+{
+  "name": "gigabyte/cache",
+  "description": "PHP Cache Library",
+  "license": "GNU",
+  "authors": [
+    {
+      "name": "Faiz Rasool",
+      "email": "faiz708@gmail.com"
+    }
+  ],
+  "autoload" : {
+    "psr-4": {
+      "azi\\" : ["src/cache"]
+    }
+  },
+  "require": {
+    "php": ">=5.4"
+  }
+}
