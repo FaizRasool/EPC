@@ -21,7 +21,7 @@ namespace gigabyte\cache;
 $cache_config = new CacheConfig();
 $cache_config->setCacheModule('search result')
         ->setIntervalInDay(2)
-        ->setCacheFilter(array('serach' => $serach, 'paramter1' => $value1, 'paramter2' => $value2));
+        ->setCacheFilter(array('serach' => $serach, 'param1' => $value1, 'param2' => $value2));
 $cache = CacheFactory::createFileCache($cache_config,"mycache/");
 if ($cache->checkCache()) {
     $search_result = $cache->readCache();

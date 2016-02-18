@@ -12,14 +12,14 @@ Class Cache {
     private $writer;
     private $check;
     private $cache_identifier;
-    private $prams_formatter;
+    private $params_formatter;
 
-    public function __construct(CacheConfig $config, CacheCheck $check, CacheReader $reader, CacheWriter $writer, PramsFormatter $prams_formatter) {
+    public function __construct(CacheConfig $config, CacheCheck $check, CacheReader $reader, CacheWriter $writer, ParamsFormatter $params_formatter) {
         $this->config = $config;
         $this->reader = $reader;
         $this->writer = $writer;
         $this->check = $check;
-        $this->prams_formatter = $prams_formatter;
+        $this->params_formatter = $params_formatter;
         //init
         $this->sanitizeFilter();
         $this->cache_identifier = $this->generateCacheIdentifier($config->cacheFilter());
@@ -47,9 +47,9 @@ Class Cache {
 
     //sanitize the config
     private function sanitizeFilter() {
-        $this->prams_formatter->setPrams($this->config->cacheFilter());
-        $this->config->setCacheFilter($this->prams_formatter->getFormattedPrams());
-        $this->config->setCacheModule($this->prams_formatter->cleanValue($this->config->cacheModule()));
+        $this->params_formatter->setPrams($this->config->cacheFilter());
+        $this->config->setCacheFilter($this->params_formatter->getFormattedPrams());
+        $this->config->setCacheModule($this->params_formatter->cleanValue($this->config->cacheModule()));
     }
 
 }
