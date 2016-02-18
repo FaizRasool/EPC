@@ -3,7 +3,7 @@
 namespace gigabyte\cache;
 
 use gigabyte\cache\config\CacheConfig;
-use gigabyte\cache\sanitizer\PramsFormatter;
+use gigabyte\cache\sanitizer\ParamsFormatter;
 
 Class Cache {
 
